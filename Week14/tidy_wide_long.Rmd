@@ -49,7 +49,7 @@ data_wide %>% gather(contcond,measurement,control:cond2) %>%
 Now if we started with data that was in long format how would we get to wide ? There is a function called spread that will help with that process. So we have this:
 
 ```{r echo=FALSE}
-data_wide %>% gather(contcond,measurement,control:cond2) -> data_long
+data_long<-data_wide %>% gather(contcond,measurement,control:cond2)
 ```
 
 ```{r}
@@ -57,7 +57,7 @@ data_long
 ```
 
 ```{r}
-data_long %>% data_long %>% spread(contcond,measurement)
+data_long %>% spread(contcond,measurement)
 
 ```
 
